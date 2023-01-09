@@ -7,11 +7,13 @@ use Illuminate\Support\Facades\DB;
 
 class PegawaiController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        //mengambil data dari table pegawai
-        $pegawai = DB::table('pegawai')->paginate(5);
-        //mengirim dara pegawai ke view index
-        return view('pegawai',['pegawai' => $pegawai]);
+        if ($request->has('cari')) {
+            $pegawai = DB::table('pegawai')->where('pegawai_nama', 'LIKE', '%' . $request->cari . '%')->paginate(5);
+        } else {
+            $pegawai = DB::table('pegawai')->paginate(5);
+        }
+        return view('pegawai', ['pegawai' => $pegawai]);
     }
 }

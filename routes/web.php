@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\GoogleController;
+use App\Http\Controllers\FacebookController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,3 +41,7 @@ Route::get('/pegawai',[App\Http\Controllers\PegawaiController::class,'index']);
 Route::get('auth/google', [App\Http\Controllers\GoogleController::class, 'redirectToGoogle']);
 
 Route::get('auth/google/callback', [App\Http\Controllers\GoogleController::class, 'handleGoogleCallback']);
+
+Route::get('auth/facebook', [App\Http\Controllers\FacebookController::class, 'redirectToFacebook'])->name('facebook.login');
+
+Route::get('auth/facebook/callback', [App\Http\Controllers\FacebookController::class, 'handleFacebookCallback']);

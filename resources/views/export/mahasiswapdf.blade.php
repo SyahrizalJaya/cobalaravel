@@ -13,7 +13,7 @@ crossorigin="anonymous">
 
 <body>
     <style type="text/css">
-        table tr td,
+        table tr td,    
         table tr th {
             font-size: 9pt;
         }

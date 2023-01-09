@@ -92,15 +92,14 @@
                 <a href="/mahasiswa/exportpdf" class="btn btn-sm btn-success">Export PDF</a>
             </div> 
             
+            <!-- Search -->
             <div class="col-5 my-4">
                 <form class="d-flex" role="search">
-                    <input name="cari" class="form-control me-2"
-                    type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success"
-                    type="submit">Search</button>
+                    <input type="search" name="cari" class="form-control me-2" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
             </div>
-
+            
 
 
             <div class="col-6 my-4" align="right"> 
@@ -111,7 +110,18 @@
                 </button> 
             </div>
 
+
+
             <div class="table-responsive"> 
+                <!-- pemberitahuan error -->
+            @if ($data_mahasiswa->count() > 0 )
+            @else
+            <center>
+                <font color="red">
+                    <h3>!! Tidak ditemukan data yang sesuai dengan kata kunci !!</h3>
+                </font>
+            </center>
+            @endif
                 <table class="table table table-hover"> 
                     <thead> 
                         <tr> 

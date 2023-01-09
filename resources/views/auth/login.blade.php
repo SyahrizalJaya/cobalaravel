@@ -64,12 +64,17 @@
                                 @endif
                             </div>
                         </div>
-                    </form>
-                    <div class="flex text-center justify-end mt-4">
+                        <div class="flex text-center justify-end mt-4">
                         <a href="{{ url('auth/google') }}">
                             <img src="https://developers.google.com/identity/images/btn_google_signin_dark_normal_web.png"
                             style="margin-left: 3cm;">
                    </div>
+                   <div class="flex items-center justify-end mt-4">
+                <a class="ml-1 btn btn-primary" href="{{ url('auth/facebook') }}" style="margin-top: 0px !important;background: blue;color: #ffffff;padding: 5px;border-radius:7px;" id="btn-fblogin">
+                    <i class="fa fa-facebook-square" aria-hidden="true"></i> Login with Facebook
+                </a>
+            </div>
+                    </form>
                 </div>
             </div>
         </div>

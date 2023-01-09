@@ -15,6 +15,24 @@
         <center>
             <h1 class="my-4">Halaman Data Pegawai</h1>
         </center>
+
+        @if ($pegawai -> count() > 0)
+        @else
+        <center>
+            <font color="red">
+                <h3>!! Tidak ditemukan data yang sesuai dengan kata kunci !!</h3>
+            </font>
+        </center>
+        @endif
+
+        <!-- Search -->
+        <div class="col-5 my-4">
+                <form class="d-flex" role="search">
+                    <input type="search" name="cari" class="form-control me-2" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+            
         <div class="card mb-3">
             {{-- membuat tabel --}}
             <table class="table table-striped">
